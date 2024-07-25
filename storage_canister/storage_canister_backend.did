@@ -1,0 +1,5 @@
+service : () -> {
+  get_asset : (text) -> (opt blob) query;
+  list_assets : () -> (vec text) query;
+  upload_asset : (text, blob) -> ();
+}
