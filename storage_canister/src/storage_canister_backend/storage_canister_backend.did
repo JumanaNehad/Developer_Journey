@@ -1,5 +1,7 @@
-service : () -> {
+type ChunkArgs = record { content : blob; order : nat32 };
+service : {
+  chunk_ids_check : (vec nat) -> (bool) query;
   get_asset : (text) -> (opt blob) query;
   list_assets : () -> (vec text) query;
-  upload_asset : (text, blob) -> ();
+  upload_chunk : (ChunkArgs) -> (nat);
 }
